@@ -7,7 +7,8 @@ authors = ["Mathieu Dhondt <laundro@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.25.1"
-loguru = "^0.5.3"
+pydantic = {extras = ["dotenv"], version = "^1.7.3"}
+tweepy = "^3.10.0"
 
 [tool.poetry.dev-dependencies]
 
