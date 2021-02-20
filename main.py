@@ -1,14 +1,10 @@
 import time
 import requests
-from flask import Flask
 from loguru import logger
 
 SECONDS_BETWEEN_CHECKS = 60
 
-app = Flask(__name__)
 
-
-@app.route('/<current_movie_id>')
 def check(current_movie_id: int):
     current_movie_id = int(current_movie_id)
 

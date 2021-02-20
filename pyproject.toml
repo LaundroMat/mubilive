@@ -7,7 +7,6 @@ authors = ["Mathieu Dhondt <laundro@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.25.1"
-Flask = "^1.1.2"
 loguru = "^0.5.3"
 
 [tool.poetry.dev-dependencies]
