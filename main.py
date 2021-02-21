@@ -1,8 +1,10 @@
 import os
 import time
+
+import arrow
 import requests
 import tweepy
-from dotenv.main import logger
+from loguru import logger
 from pydantic import BaseSettings
 
 SECONDS_BETWEEN_CHECKS = 60
@@ -49,7 +51,7 @@ def check(current_movie_id: int = None):
         "Pragma": "no-cache"
     }
 
-    r = requests.get('https://mubi.com/live.json', headers=headers)
+    r = requests.get('https://mubi.com/live.json', params={"_": arrow.utcnow().int_timestamp}, headers=headers)
     data = r.json()
     logger.debug(data)
     film_info = data['film_programming']
