@@ -60,7 +60,7 @@ def check(current_movie_id: int = None):
         logger.debug(f"New movie: {film_info['title']}")
 
         tweet_body = f'''
-{film_info['title']} ({film_info['directors']}, {film_info['country']}, {film_info['year']}) just started on mubi.com/live.
+{film_info['title']} ({film_info['directors']}, {film_info['country']}, {film_info['year']}) just started on mubi.com/live when you're in the US.
 
 {film_info['excerpt']}
 
