@@ -75,7 +75,7 @@ def check(current_movie_id: int = None):
         api.update_with_media(filename, status=status)
         os.remove(filename)
     else:
-        print("No new movie (yet). Still watching {film_info['title']}.")
+        print(f"No new movie (yet). Still watching {film_info['title']}.")
 
     time.sleep(SECONDS_BETWEEN_CHECKS)
     check(film_info['id'])
