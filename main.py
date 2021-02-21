@@ -11,7 +11,6 @@ SECONDS_BETWEEN_CHECKS = 60
 class Settings(BaseSettings):
     twitter_api_key: str
     twitter_api_secret: str
-    twitter_bearer_token: str
 
     twitter_access_token: str
     twitter_access_token_secret: str
@@ -50,10 +49,14 @@ def check(current_movie_id: int = None):
     film_info = data['film_programming']
 
     if film_info['id'] != current_movie_id:
+        logger.debug(f"New movie: {film_info['title']}")
+
         tweet_body = f'''
-mubi.com/live now showing {film_info['title']} ({film_info['directors']}, {film_info['country']}, {film_info['year']}).
+{film_info['title']} ({film_info['directors']}, {film_info['country']}, {film_info['year']}) just started on mubi.com/live.
 
 {film_info['excerpt']}
+
+
 '''
         tweet_img = film_info['stills']['retina']
 
