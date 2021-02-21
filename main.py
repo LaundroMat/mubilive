@@ -44,8 +44,14 @@ api = create_api()
 def check(current_movie_id: int = None):
     current_movie_id = int(current_movie_id) if current_movie_id else None
 
-    r = requests.get('https://mubi.com/live.json')
+    headers = {
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
+    }
+
+    r = requests.get('https://mubi.com/live.json', headers=headers)
     data = r.json()
+    logger.debug(data)
     film_info = data['film_programming']
 
     if film_info['id'] != current_movie_id:
