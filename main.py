@@ -79,12 +79,10 @@ def check(current_movies: list):
         if film_info['id'] != movie['current_movie_id']:
             logger.debug(f"New movie: {film_info['title']}")
             movie['current_movie_id'] = film_info['id']
-            tweet_body = f'''
-{film_info['title']} ({film_info['directors']}, '''
+            tweet_body = f'''{film_info['title']} ({film_info['directors']}, '''
             if film_info.get('country'):
                 tweet_body += f"{film_info.get('country')}"
-            tweet_body += f'''
-{film_info['year']}) just started on mubi.com/live in {movie['flag']} {movie['country']}.
+            tweet_body += f'''{film_info['year']}) just started on mubi.com/live in {movie['flag']} {movie['country']}.
     
 {film_info['excerpt']}
 '''
