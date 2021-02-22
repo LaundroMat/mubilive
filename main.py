@@ -50,9 +50,9 @@ def fetch_data_via_proxy(doc, proxies=None):
         logger.error(f"Encountered proxy error for {country['name']} at {proxy}.")
         logger.error(e)
         if proxies is None:
-            return fetch_data_via_proxy(country, get_proxies(country['name']))  # go through all proxies until one works.
+            return fetch_data_via_proxy(doc, get_proxies(country['name']))  # go through all proxies until one works.
         else:
-            return fetch_data_via_proxy(country, proxies)
+            return fetch_data_via_proxy(doc, proxies)
 
     db_client.query(q.update(doc['ref'], {"data": {"proxy": proxy}}))
     return r.json()
