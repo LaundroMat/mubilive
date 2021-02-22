@@ -11,6 +11,7 @@ pydantic = {extras = ["dotenv"], version = "^1.7.3"}
 tweepy = "^3.10.0"
 loguru = "^0.5.3"
 arrow = "^0.17.0"
+faunadb = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
 
