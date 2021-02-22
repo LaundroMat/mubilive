@@ -78,7 +78,7 @@ def check():
         if mubi_film_info['id'] != country['currentMovieId']:
             logger.debug(f"New movie for {country['name']}: {mubi_film_info['title']}")
 
-            # db_client.query(q.update(doc['ref'], {"data": {"currentMovieId": mubi_film_info['id']}}))
+            db_client.query(q.update(doc['ref'], {"data": {"currentMovieId": mubi_film_info['id']}}))
 
             tweet_body = f'''{mubi_film_info['title']} ({mubi_film_info['directors']}, '''
             if mubi_film_info.get('country'):
