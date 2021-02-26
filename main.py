@@ -1,11 +1,9 @@
 import os
 import time
 
-import arrow
 import requests
 import tweepy
 from loguru import logger
-from pydantic import BaseSettings
 
 from conf import settings
 from db import db_client, q
