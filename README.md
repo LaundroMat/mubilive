@@ -1,6 +1,6 @@
 ## MubiLive
 
-Source code that powers the @MubiLive Twitter bot.
+Source code that powers the [@MubiLive](https://twitter.com/MubiLive) Twitter bot.
 
 Ready to be deployed to Heroku.
 
